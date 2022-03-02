@@ -1,0 +1,12 @@
+{
+  "name": "snowflake-wasm",
+  "version": "0.1.0",
+  "files": [
+    "snowflake_wasm_bg.wasm",
+    "snowflake_wasm.js",
+    "snowflake_wasm.d.ts"
+  ],
+  "module": "snowflake_wasm.js",
+  "types": "snowflake_wasm.d.ts",
+  "sideEffects": false
+}

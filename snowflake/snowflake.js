@@ -1,5 +1,5 @@
 
-import init, { snow_initialize, compile_and_run, create_document } from './snow/snowflake_wasm.js';
+import init, { snow_initialize, compile_and_run, create_document } from './snowflake/snowflake_wasm.js';
 
 const compile_button = document.querySelector('#compile')
 const code_area = document.getElementById("code")
