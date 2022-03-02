@@ -8,7 +8,7 @@ system test using turtle {
     forward(200.0)
   }
 
-  rule forward if length > 5.0 {
+  rule forward if length > 1.0 {
     let d = length / 3.0
     forward(d)
     turn(60)

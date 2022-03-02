@@ -4,7 +4,7 @@ import init, { snow_initialize, compile_and_run, create_document } from './snowf
 const compile_button = document.querySelector('#compile')
 const code_area = document.getElementById("code")
 
-function getExample(name) {
+export async function getExample(name) {
   // read text from URL location
   var request = new XMLHttpRequest();
   console.log("Loading " + name)
@@ -15,6 +15,7 @@ function getExample(name) {
       var type = request.getResponseHeader('Content-Type');
       if (type.indexOf("text") !== 1) {
         code_area.value = request.responseText
+        compile_code()
       }
     }
   }
@@ -25,6 +26,8 @@ async function load() {
   console.log("Initializing snowflake");
   await init();
   snow_initialize();
+
+  getExample("./examples/koch_snowflake.snow")
 }
 
 export function compile_code() {
@@ -34,12 +37,14 @@ export function compile_code() {
   const result = compile_and_run(input);
   //console.log(result);
 
-  document.getElementById("output").outerHTML += result;
+  document.getElementById("output").innerHTML = result
+  code_area.focus()
 }
 
 load()
 
-getExample("./examples/koch_snowflake.snow")
-
 // attach to button?
 compile_button.addEventListener('click', compile_code)
+document.querySelector("#snowflake").addEventListener("click", () => getExample("./examples/koch_snowflake.snow"))
+document.querySelector("#snowflake_random").addEventListener("click", () => getExample("./examples/koch_snowflake_random.snow"))
+document.querySelector("#boxes").addEventListener("click", () => getExample("./examples/box_divide.snow"))
