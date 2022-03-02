@@ -1,0 +1,29 @@
+system test using turtle {
+
+  start {
+    forward(200.0)
+    turn(240.0)
+    forward(200.0)
+    turn(240.0)
+    forward(200.0)
+  }
+
+  rule forward if length > 5.0 {
+    let alpha = urange(0.1, 0.33)
+    let d = alpha * length
+    let tip_base = length / 2.0 - d
+    let tip = vec2f(tip_base, tip_base)
+
+    let angle_in = atan( tip.y / tip.x ) -> to_degrees()
+    let tip_edge = tip -> length()
+
+    forward(d)
+    turn(angle_in)
+    forward(tip_edge)
+    turn( -2.0 * angle_in )
+    forward(tip_edge)
+    turn(angle_in)
+    forward(d)
+  }
+
+}
