@@ -39,7 +39,7 @@ export function compile_code() {
 
 load()
 
-getExample("http://0.0.0.0:8000/examples/koch_snowflake.snow")
+getExample("./examples/koch_snowflake.snow")
 
 // attach to button?
 compile_button.addEventListener('click', compile_code)
