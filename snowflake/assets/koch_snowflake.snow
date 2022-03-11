@@ -1,0 +1,22 @@
+system test using turtle {
+
+  start {
+    forward(200.0)
+    turn(240.0)
+    forward(200.0)
+    turn(240.0)
+    forward(200.0)
+  }
+
+  rule forward if length > 5.0 {
+    let d = length / 3.0
+    forward(d)
+    turn(60)
+    forward(d)
+    turn(-120)
+    forward(d)
+    turn(60)
+    forward(d)
+  }
+
+}
