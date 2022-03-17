@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/snowflake/static/css/main.e6a177f5.css",
-    "main.js": "/snowflake/static/js/main.5ce056c1.js",
+    "main.css": "/snowflake/static/css/main.1c092d4a.css",
+    "main.js": "/snowflake/static/js/main.da45b295.js",
     "static/js/787.685a0358.chunk.js": "/snowflake/static/js/787.685a0358.chunk.js",
-    "static/media/snowflakejs_bg.wasm": "/snowflake/static/media/snowflakejs_bg.0d65ec97b91d30c083d9.wasm",
-    "static/media/codicon.ttf": "/snowflake/static/media/codicon.ade705761eb7e702770d.ttf",
+    "static/media/snowflakejs_bg.wasm": "/snowflake/static/media/snowflakejs_bg.5ddeb7c7c18b9dbf6d1e.wasm",
     "index.html": "/snowflake/index.html",
-    "main.e6a177f5.css.map": "/snowflake/static/css/main.e6a177f5.css.map",
-    "main.5ce056c1.js.map": "/snowflake/static/js/main.5ce056c1.js.map",
+    "main.1c092d4a.css.map": "/snowflake/static/css/main.1c092d4a.css.map",
+    "main.da45b295.js.map": "/snowflake/static/js/main.da45b295.js.map",
     "787.685a0358.chunk.js.map": "/snowflake/static/js/787.685a0358.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6a177f5.css",
-    "static/js/main.5ce056c1.js"
+    "static/css/main.1c092d4a.css",
+    "static/js/main.da45b295.js"
   ]
 }
