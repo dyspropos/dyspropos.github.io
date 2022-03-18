@@ -1,0 +1,26 @@
+system transform using svg {
+
+  sy rule1(tf: pose2f, size: float)
+  sy shape(tf: pose2f, size: float)
+
+  start {
+    yield rule1( identity_pose(), 10.0 )
+  }
+
+  rule rule1 {
+    shape( tf, size )
+    
+    tf => rotate(10.0)
+    tf => translate(size, 0.0)
+    rule1( tf, size )
+  }
+
+  rule shape {
+    box( style(1.0, #000000, #ffffff), tf, size, size )
+  }
+
+  rule shape {
+    circle( style(1.0, #000000, #ffffff), tf, size / 2 )
+  }
+  
+}

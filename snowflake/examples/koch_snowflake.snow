@@ -1,4 +1,4 @@
-system test using turtle {
+system test using svg {
 
   start {
     forward(200.0)
@@ -6,6 +6,7 @@ system test using turtle {
     forward(200.0)
     turn(240.0)
     forward(200.0)
+    path( style(1.0, #000000, #ffffff), identity_pose() )
   }
 
   rule forward if length > 5.0 {
