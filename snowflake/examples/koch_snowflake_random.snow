@@ -1,18 +1,35 @@
 system test using turtle {
 
+  parm size: float {
+    default: 200.0
+  }
+
+  parm split_min: float {
+    default: 0.1
+  }
+
+  parm split_max: float {
+    default: 0.33
+  }
+
+  parm height: float {
+    default: 1.0
+  }
+
+
   start {
-    forward(200.0)
+    forward(size)
     turn(240.0)
-    forward(200.0)
+    forward(size)
     turn(240.0)
-    forward(200.0)
+    forward(size)
   }
 
   rule forward if length > 5.0 {
-    let alpha = urange(0.1, 0.33)
+    let alpha = urange(split_min, split_max)
     let d = alpha * length
     let tip_base = length / 2.0 - d
-    let tip = vec2f(tip_base, tip_base)
+    let tip = vec2f(tip_base, height * tip_base)
 
     let angle_in = atan( tip.y / tip.x ) -> to_degrees()
     let tip_edge = tip -> length()

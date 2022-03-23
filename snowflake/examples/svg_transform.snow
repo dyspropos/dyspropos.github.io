@@ -7,7 +7,7 @@ system transform using svg {
     yield rule1( identity_pose(), 10.0 )
   }
 
-  rule rule1 {
+  rule rule1 if tf.delta->length() < 500.0 {
     shape( tf, size )
     
     tf => rotate(10.0)

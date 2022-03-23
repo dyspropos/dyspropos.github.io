@@ -1,0 +1,32 @@
+system boxes using svg {
+
+  start {
+    yield rect( style(1.0, #000000, #ff0000), identity_pose(), 0.0, 400.0, 0.0, 400.0)
+  }
+
+  fn thinner(s: style, alpha: float) -> style {
+    return style( s.stroke_width * alpha, s.stroke, s.fill )
+  }
+
+  fn fill(s: style, value: color) -> style {
+    return style( s.stroke_width, s.stroke, value )
+  }
+
+  // Split x
+  rule rect
+  {
+    style => thinner(0.9)
+    style => fill( #ff0000 )
+    yield rect(style, transform, x0, (x1 + x0)/2.0, y0, y1 )
+    yield rect(style, transform, (x1 + x0)/2.0, x1, y0, y1 )
+  }
+
+  // Split y
+  rule rect {
+    style => thinner(0.8)
+    style => fill( #00ff00 )
+    yield rect(style, transform, x0, x1, y0, (y1+y0)/2.0 )
+    yield rect(style, transform, x0, x1, (y1+y0)/2.0, y1 )
+  }
+
+}
