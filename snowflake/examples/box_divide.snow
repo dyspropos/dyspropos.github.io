@@ -1,0 +1,47 @@
+system boxes using svg {
+
+  parm limit: float {
+    default: 50.0
+  }
+
+  parm variation: float {
+    default: 0.5
+  }
+
+  fn split(a: float, b: float) -> float {
+    let alpha = clamp(0.5 + urange(-variation, variation))
+    return (b - a) * alpha + a
+  }
+
+  start {
+    yield rect( 0.0, 400.0, 0.0, 400.0)
+  }
+
+  fn thinner(s: style, alpha: float) -> style {
+    return style( s.stroke_width * alpha, s.stroke, s.fill )
+  }
+
+  fn fill(s: style, value: color) -> style {
+    return style( s.stroke_width, s.stroke, value )
+  }
+
+  // Split x
+  rule rect if (x1 - x0) > limit
+  {
+    let xmid = split(x0, x1)
+    style => thinner(0.9)
+    style => fill( #ff0000 )
+    yield rect( x0, xmid, y0, y1 )
+    yield rect( xmid, x1, y0, y1 )
+  }
+
+  // Split y
+  rule rect if (y1 - y0) > limit {
+    let ymid = split(y0, y1)
+    style => thinner(0.8)
+    style => fill( #00ff00 )
+    yield rect( x0, x1, y0, ymid )
+    yield rect( x0, x1, ymid, y1 )
+  }
+
+}

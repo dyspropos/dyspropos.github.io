@@ -1,26 +1,43 @@
 system transform using svg {
 
-  sy rule1(tf: pose2f, size: float)
-  sy shape(tf: pose2f, size: float)
+  sy rule1(size: float)
+  sy shape(size: float)
+  sy style_shape(size: float)
 
   start {
-    yield rule1( identity_pose(), 10.0 )
+    yield rule1( 10.0 )
   }
 
-  rule rule1 if tf.delta->length() < 500.0 {
-    shape( tf, size )
+  rule rule1 if transform.delta->length() < 500.0 {
+    style_shape( size )
     
-    tf => rotate(10.0)
-    tf => translate(size, 0.0)
-    rule1( tf, size )
+    transform => rotate(10.0)
+    transform => translate(size, 0.0)
+    size = size * urange(0.9, 1.2)
+    rule1( size )
+  }
+
+  rule style_shape {
+    style = style(style.stroke_width, style.stroke, #ff0000)
+    shape( size )
+  }
+
+  rule style_shape {
+    style = style(style.stroke_width, style.stroke, #00ff00)
+    shape( size )
+  }
+
+  rule style_shape {
+    style = style(style.stroke_width, style.stroke, #0000ff)
+    shape( size )
   }
 
   rule shape {
-    box( style(1.0, #000000, #ffffff), tf, size, size )
+    box( size, size )
   }
 
   rule shape {
-    circle( style(1.0, #000000, #ffffff), tf, size / 2 )
+    circle( size / 2 )
   }
   
 }

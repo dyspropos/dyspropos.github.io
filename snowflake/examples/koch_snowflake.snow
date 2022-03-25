@@ -1,11 +1,11 @@
-system test using svg {
+system test using turtle {
 
   parm size: float {
     default: 200.0
   }
 
   parm limit: float {
-    default: 5.0
+    default: 1.0
   }
 
   parm angle: float {
@@ -18,7 +18,6 @@ system test using svg {
     forward(size)
     turn(240.0)
     forward(size)
-    path( style(1.0, #000000, #ffffff), identity_pose() )
   }
 
   rule forward if length > limit {
