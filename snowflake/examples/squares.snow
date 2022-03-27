@@ -1,0 +1,46 @@
+system squares using turtle {
+
+  parm size: float {
+    default: 100.0
+  }
+
+  parm angle: float {
+    default: 90.0
+  }
+
+  parm sides: int {
+    default: 5
+  }
+
+  sy polygon(remaining: float, delta: float)
+
+  start {
+    let angle = 360.0 / sides
+    polygon(sides, angle)
+  }
+
+  rule polygon if remaining > 0.0 {
+    forward(size)
+    turn(delta)
+    polygon(remaining - 1, delta)
+  }
+
+  rule forward if length > 5.0 {
+    length = length/4
+    forward(length)
+    turn(angle)
+    forward(length)
+    turn(-angle)
+    forward(length)
+    turn(-angle)
+    forward(length)
+    forward(length)
+    turn(angle)
+    forward(length)
+    turn(angle)
+    forward(length)
+    turn(-angle)
+    forward(length)
+  }
+
+}

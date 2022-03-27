@@ -1,4 +1,4 @@
-system boxes using svg {
+system boxes using scene2d {
 
   parm limit: float {
     default: 50.0

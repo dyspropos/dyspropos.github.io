@@ -1,0 +1,49 @@
+system weed using turtle {
+
+  sy x()
+  sy y()
+  parm L: float { default: 1.0 }
+  parm angle: float { default: 22.5 }
+
+  start {
+    direction(-90)
+    forward(L)
+  }
+
+  rule forward {
+    forward(length)
+    forward(length)
+    
+    turn(-angle)
+    push()
+    x()
+    y()
+    pop()
+    turn(angle)
+  }
+
+  rule forward {
+    forward(length)
+    forward(length)
+    
+    turn(angle)
+    push()
+    x()
+    y()
+    pop()
+    turn(-angle)
+  }
+
+  rule x {
+    turn(angle)
+    forward(L)
+    y()
+  }
+
+  rule y {
+    turn(-angle)
+    forward(L)
+    x()
+  }
+
+}

@@ -1,0 +1,40 @@
+system tree using turtle {
+
+  sy x()
+  parm L: float { default: 10.0 }
+  parm angle: float { default: 22.5 }
+
+  start {
+    direction(-90)
+    x()
+  }
+
+  rule forward {
+    forward(L)
+    forward(L)
+  }
+
+  rule x {
+    forward(L)
+    turn(-angle)
+    push()
+    push()
+    x()
+    pop()
+    turn(angle)
+    x()
+    pop()
+    turn(angle)
+    forward(L)
+    
+    push()
+    turn(angle)
+    forward(L)
+    x()
+    pop()
+    turn(-angle)
+    x()
+    
+  }
+
+}
