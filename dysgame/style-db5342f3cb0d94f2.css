@@ -1,0 +1,63 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    border: 1px solid black;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#header {
+    font-size: 20pt;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+
+#ide {
+    flex-basis: 50em;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    flex-grow: 1;
+}
+
+#editor {
+    height: 100%;
+}
+
+#view {
+    align-items: left;
+    flex-grow: 3;
+    padding: 16px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+}
+
+button {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px;
+}
