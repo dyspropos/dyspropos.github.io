@@ -6,7 +6,7 @@ body {
 body {
     margin: 0px;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    border: 1px solid black;
+    border: none;
 }
 
 #app {
@@ -28,12 +28,21 @@ body {
     height: 100%;
 }
 
+#examples {
+    display: flex;
+    flex-direction: row;
+}
+
 #ide {
     flex-basis: 50em;
     display: flex;
     flex-direction: column;
     padding: 16px;
     flex-grow: 1;
+}
+
+#readme {
+    width: 400px;
 }
 
 #editor {
