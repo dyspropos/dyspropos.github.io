@@ -639,7 +639,7 @@ function initSync(module) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('dysgame-app-fd2dbaee65f01616_bg.wasm', import.meta.url);
+        input = new URL('dysgame-app-b10a5ad848c67e95_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 
