@@ -1,0 +1,11 @@
+{
+    "name": "Maze Generator",
+    "short_name": "dys-maze-generator",
+    "icons": [],
+    "lang": "en-US",
+    "id": "/index.html",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "white",
+    "theme_color": "white"
+}
